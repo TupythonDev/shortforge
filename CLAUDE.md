@@ -78,7 +78,7 @@ Este repositório produz séries narrativas para **vários canais, cada um com s
 
 ### VoiceStudio — voz (PADRÃO)
 - Com o app aberto, o REST responde em `http://localhost:3900` e o MCP em `http://localhost:3900/mcp/` (instalação e configuração: `INSTALACAO.md`, seção 4)
-- **Cada canal tem sua voz oficial** (perfil do VoiceStudio), registrada na identidade/`CLAUDE.md` do canal em `canais/<canal>/`. Nunca usar a voz de um canal em outro. Listar os perfis existentes pelo app/REST antes de criar um novo; perfis descartados devem ser apagados para não confundir
+- **Cada canal tem sua voz oficial** (perfil do VoiceStudio), registrada na identidade/`CLAUDE.md` do canal em `canais/<canal>/`. Não usar a voz de um canal em outro, salvo decisão explícita do dono registrada no `CLAUDE.md` do canal que a reaproveita. Listar os perfis existentes pelo app/REST antes de criar um novo; perfis descartados devem ser apagados para não confundir
 - Settings padrão: `steps: 32` (qualidade), `language: "pt-BR"`
 - **Gerar 3 takes por trecho e escolher o melhor** — geração não é determinística; manda `seed` para reprodutibilidade; `instruct` no `/v1/audio/speech` é aceito (200) mas NÃO produz sussurro (testado: fração de fala com tom 0,53 vs 0,02 de um perfil sussurrado) — não confiar nele
 - Clone via REST: `POST /profiles` multipart (`name`, `kind=clone`, `language`, `ref_audio`) com `curl.exe` (PowerShell 5.1 não tem `-Form`); o app transcreve o `ref_text` sozinho. TTS via `POST /v1/audio/speech` (corpo JSON UTF-8: `model=omnivoice`, `voice=<profile_id>`, `response_format=wav`, `num_step=32`). **No bash do Windows, texto com acento inline em `curl -d` dá HTTP 400 (codificação)**: mande o JSON por arquivo UTF-8 (`--data-binary @arq.json`) ou use `scripts/narrar.js` (Node). Perfil `design` NÃO aceita trocar o áudio (PUT /profiles/<id>/audio → 409): crie um clone novo
@@ -108,6 +108,7 @@ Este repositório produz séries narrativas para **vários canais, cada um com s
 - **Render**: `node scripts/render.js <cena.html> --duracao N --fps 30 --audio audio/narracao-final.wav --saida canais/<canal>/series/<serie>/epXX/final/arquivo.mp4` (o script avisa se o áudio for mais curto que a duração)
   - o script cria a pasta `final/` se não existir; frames passam por `tmp/` e são apagados no fim
 - Cena de referência: o `html/gerar.js` de uma série existente gera a cena HTML (protagonista animado, cenários em camadas, grão, legendas, cartões de voto); `modelos/LEIA.md` tem o fluxo de comandos
+- **Cenas com three.js** (câmera 3D sobre planos 2D; `three` já está em `package.json`): importar de `node_modules/three/build/three.module.js` por caminho relativo (o `render.js` abre o Chrome com `--allow-file-access-from-files` e WebGL por software) e definir `window.renderTempo(segundos)`, que posiciona a câmera e chama `renderer.render` para aquele instante; o `render.js` chama essa função a cada frame, junto das animações CSS. Usar `preserveDrawingBuffer: true`. Não colocar planos no mesmo `z` (z-fighting aparece como hachura)
 - Requer **ffmpeg/ffprobe** no PATH (yt-dlp opcional); instalação em `INSTALACAO.md`
 - 1080×1920, 30 fps, x264 CRF 20, AAC 192k
 

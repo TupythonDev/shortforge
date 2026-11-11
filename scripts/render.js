@@ -59,6 +59,8 @@ async function main() {
       "--no-sandbox",
       "--disable-dev-shm-usage",
       "--hide-scrollbars",
+      "--allow-file-access-from-files", // permite carregar three.js (módulo ES) de node_modules via file://
+      "--use-angle=swiftshader", "--enable-unsafe-swiftshader", // WebGL por software quando não há GPU no headless
       `--window-size=${LARGURA},${ALTURA}`,
     ],
   });
@@ -82,6 +84,8 @@ async function main() {
         document.getAnimations().forEach((anim) => {
           try { anim.currentTime = seg * 1000; } catch (e) { /* animacao já terminada */ }
         });
+        // cenas com three.js: a página define window.renderTempo(segundos) e desenha o frame desse instante
+        if (typeof window.renderTempo === "function") window.renderTempo(seg);
       }, t);
       await page.screenshot({
         path: path.join(dirFrames, `frame_${String(i).padStart(6, "0")}.jpg`),

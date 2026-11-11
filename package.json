@@ -16,6 +16,7 @@
     "sons:buscar": "node scripts/sons-openverse.js buscar"
   },
   "dependencies": {
-    "puppeteer": "^25.16.0"
+    "puppeteer": "^25.16.0",
+    "three": "^0.187.0"
   }
 }
