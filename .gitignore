@@ -1,0 +1,17 @@
+node_modules/
+tmp/
+*.log
+.env
+.DS_Store
+Thumbs.db
+
+.secrets/
+
+# Canais ficam so no disco (o repositorio guarda a estrutura e as ferramentas): ver canais/LEIA.md
+canais/*
+!canais/LEIA.md
+__pycache__/
+
+# Snapshots de tendencias sao gerados por scripts/tendencias.js (so locais)
+entity/tendencias/*
+!entity/tendencias/.gitkeep

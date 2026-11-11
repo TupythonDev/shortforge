@@ -1,0 +1,21 @@
+{
+  "name": "ia-data-estudio-series",
+  "version": "1.0.0",
+  "description": "Estúdio de séries interativas multicanal (Shorts/TikTok): roteiro, narração, cena HTML, render e mixagem",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "commonjs",
+  "scripts": {
+    "test": "node --test tests/",
+    "narrar": "node scripts/narrar.js",
+    "voicestudio": "node scripts/configurar-voicestudio.js",
+    "montar": "node scripts/montar-narracao.js",
+    "render": "node scripts/render.js",
+    "sons": "node scripts/mixar-sons.js",
+    "cortar": "node scripts/cortar.js",
+    "sons:buscar": "node scripts/sons-openverse.js buscar"
+  },
+  "dependencies": {
+    "puppeteer": "^25.16.0"
+  }
+}

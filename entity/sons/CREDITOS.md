@@ -1,0 +1,11 @@
+- interfone-toca.mp3 — "Apartment Buzzer Intercom Call.wav" por SpliceSound — CC0 1.0 — https://freesound.org/people/SpliceSound/sounds/150441
+- drone-escuro.mp3 — "Dark Horror Drone" por Kinoton — CC0 1.0 — https://freesound.org/people/Kinoton/sounds/351417
+- batimentos.mp3 — "Four Heartbeats HQ_BeatSmith.wav" por Lunardrive — CC0 1.0 — https://freesound.org/people/Lunardrive/sounds/22416
+- passos-azulejo.mp3 — "Footsteps on tiled floor" por kessir — CC0 1.0 — https://freesound.org/people/kessir/sounds/264125
+- lampada-piscando.mp3 — "fluorescent light flickering 1.wav" por TemperMode — CC0 1.0 — https://freesound.org/people/TemperMode/sounds/484157
+- sirene.mp3 — "Air Raid Siren" por chungus43A — CC0 1.0 — https://freesound.org/people/chungus43A/sounds/595821
+- batidas-porta.mp3 — "Cautious Door Knocking 02.wav" por MATRIXXX_ — CC0 1.0 — https://freesound.org/people/MATRIXXX_/sounds/519418
+- vento.mp3 — "Wind Howling thru window crack.mp3" por DAVESTALKER — CC0 1.0 — https://freesound.org/people/DAVESTALKER/sounds/331527
+- torneira.mp3 — "Tap running" por peridactyloptrix — CC0 1.0 — https://freesound.org/people/peridactyloptrix/sounds/202529
+- fogo.mp3 — "A Small Fire Crackling" por ExplosiveTamale — CC0 1.0 — https://freesound.org/people/ExplosiveTamale/sounds/448361
+- gerador.mp3 — "Fan motor" por Rvgerxini — CC0 1.0 — https://freesound.org/people/Rvgerxini/sounds/518037
