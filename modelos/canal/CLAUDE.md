@@ -1,36 +1,28 @@
 # Canal <nome-do-canal>
 
-Regras específicas deste canal. As regras comuns a todos os canais estão em `../../CLAUDE.md`; identidade completa em `identidade.md`. **Tudo em português do Brasil (PT-BR).**
+<Tema em uma frase.> Regras comuns em `../../CLAUDE.md`; o que estiver aqui vale sobre os padrões de lá. Identidade completa em `identidade.md`.
 
-## O canal
-- **Nome:** <nome> — <tema em uma frase>
-- **Contas:** @<usuario> no YouTube, Instagram e TikTok; dados de login nunca ficam aqui (só o usuário público)
-- **Formato:** <ex.: Shorts / TikTok / Reels, vertical 9:16, ~50–60s por episódio, cliffhanger + votação>
-- **Tom e público:** <ex.: narrador sombrio, em 2ª pessoa; audiência jovem-adulta>
-- **Séries em `series/`:** <lista>
+## Regras do canal
 
-## Roteiro
-- **CTA de seguir:** cartão "SEGUE @<usuario>" nos últimos 2s + frase falada curta + 1 linha na legenda
-- <limites de conteúdo do tema, ex.: sustos psicológicos > gore>
+Só o que nunca pode ser quebrado neste canal (decisões do dono, limites do tema). Poucas linhas.
+- <ex.: susto psicológico, não gore>
 
-## Visual
-- Paleta: <cores em hexadecimal e uso de cada uma>
-- Estilo: <ex.: cartoon flat 2D em SVG/CSS>
-- Capa: <regra do card, número do episódio só visual>
+## Como o canal costuma fazer (ponto de partida, não trava)
+
+- **Tom:** <ex.: narrador sombrio, em 2ª pessoa>
+- **Tamanho e formato:** <ex.: 60–90 s, diálogo entre personagens>
+- **Votação e fim:** <tipo de pergunta> + cartão "SEGUE @<usuario>"
+- **Visual:** <estilo; apontar um episódio pronto como exemplo>
+- **Paleta:** <cores em hexadecimal e uso>
+- **Capa:** <regra do card; número do episódio só visual>
+- **Hashtags:** <lista>
 
 ## Voz (VoiceStudio)
-- **Voz oficial:** perfil "<nome>" (`<id do perfil>`), speed <valor>, tags de reação: <sim/não>
-- Para narrar: `VOZ_PERFIL=<id do perfil>` ao rodar `node scripts/narrar.js` (ou o campo `voz` em cada segmento)
-- Outras vozes do canal (sussurro, personagens): <perfil e id>
 
-## Publicação (lições deste canal)
-- <hashtags, restrições de feed, horários, o que já funcionou ou foi barrado>
+| Quem | Perfil | Observação |
+|---|---|---|
+| Narrador | `<id>` | speed <valor> |
 
-## Pastas deste canal
-```
-identidade.md  descricoes-canais.md  identidade/ (avatar, banner)
-referencias/   ← canais/vídeos de referência, voz/ (áudios de referência), video/
-testes-voz/    ← takes de teste de narração
-series/        ← <serie>/epXX (roteiro.md, html/, audio/, final/, publicacao.md)
-compilados/    ← MP4s longos das temporadas
-```
+- Narrar: `VOZ_PERFIL=<id>` ao rodar `node scripts/narrar.js` (ou o campo `voz` em cada segmento)
+
+Decisão substituída sai daqui e vai para `historico.md` do canal: este arquivo guarda só o que vale hoje.

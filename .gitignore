@@ -15,3 +15,6 @@ __pycache__/
 # Snapshots de tendencias sao gerados por scripts/tendencias.js (so locais)
 entity/tendencias/*
 !entity/tendencias/.gitkeep
+
+# Modelos 3D (46 MB, sem uso nos episódios atuais): ficam so no disco
+entity/modelos3d/
