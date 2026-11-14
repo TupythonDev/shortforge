@@ -7,7 +7,7 @@
 <serie>/
   epXX/
     roteiro.md    <- preencher com o template abaixo
-    html/         <- um arquivo HTML por cena
+    html/         <- gerar.js (exemplo) -> cena.html
     assets/       <- imagens/figuras usadas nas cenas
     audio/        <- segmentos.json (texto de cada trecho), segs/ (takes), narracao.wav, tempos.json
     final/        <- MP4 vertical 1080x1920 pronto para publicar
@@ -27,4 +27,4 @@ node scripts/render.js canais/<canal>/series/<serie>/epXX/html/cena01.html --aud
 node scripts/mixar-sons.js <mp4> canais/<canal>/series/<serie>/epXX <saida-som.mp4>                           # efeitos + drone, -16 LUFS
 npm test                                                                                      # testes dos scripts
 ```
-Copie `html/gerar.js` e `audio/segmentos.json` de um episódio existente do canal como ponto de partida (no primeiro episódio não há de onde copiar: o contrato da cena está em `docs/video.md`). Os cues de som ficam em `cues.js` dentro do episódio (modelo em `cues.exemplo.js`; sem ele, `scripts/mixar-sons.js` mixa só voz + drone). Antes de tudo, leia o `CLAUDE.md` e a `identidade.md` do canal.
+`ep01/` já vem com um exemplo que funciona: `audio/segmentos.json` (falas, com a palavra de `destaque` da legenda) e `html/gerar.js` (cena com legendas sincronizadas, cartão de votação junto da última fala e cartão SEGUE nos últimos 2 s). Sem voz ainda, `node <ep>/html/gerar.js` estima os tempos e já dá para renderizar e ver. Troque o texto, o desenho, as cores e o @ no topo do `gerar.js`; depois, copie de um episódio seu. O contrato da cena está em `docs/video.md`. Os cues de som ficam em `cues.js` dentro do episódio (modelo em `cues.exemplo.js`; sem ele, `scripts/mixar-sons.js` mixa só voz + drone). Antes de tudo, leia o `CLAUDE.md` e a `identidade.md` do canal.

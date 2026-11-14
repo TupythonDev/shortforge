@@ -1,0 +1,8 @@
+{
+  "g01": { "texto": "O farol apagou sozinho. E alguém bateu na porta.", "destaque": "bateu" },
+  "g02": { "texto": "O faroleiro morava só. Na ilha não havia mais ninguém.", "destaque": "ninguém" },
+  "g03": { "texto": "Na primeira noite, três batidas. Ele não abriu.", "destaque": "três" },
+  "g04": { "texto": "Na segunda, as batidas vieram de dentro do armário.", "destaque": "dentro" },
+  "g05": { "texto": "Na terceira, a luz voltou. E a porta já estava aberta.", "destaque": "aberta" },
+  "n01": { "texto": "Quem bateu? Comenta, e segue pra ver o próximo.", "destaque": "segue" }
+}

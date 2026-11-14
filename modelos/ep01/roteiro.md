@@ -2,8 +2,8 @@
 
 **Status:** [ ] rascunho | [ ] cenas definidas | [ ] áudio gerado | [ ] final renderizado
 
-## Gancho (0–2s)
-> frase única e forte — sem introdução
+## Abertura (segundo 0)
+> a frase mais forte da história, falada já no primeiro quadro e escrita na tela — sem introdução
 
 ## Cenas
 
@@ -15,8 +15,8 @@
 | 4 | | | | |
 | 5 | | | | |
 
-## Cliffhanger (final)
-> frase mistério-so/questionamento direto ao público
+## Última fala da história
+> o fecho mais forte; o cartão de votação entra junto dela, sem pausa
 
 ## CTA de votação
 Pergunta: "..."
@@ -24,13 +24,16 @@ Pergunta: "..."
 - [ ] Opção B — ...
 - (opcional) Opção C — ...
 
-## CTA de seguir (obrigatório)
-Falado (curto, 2ª pessoa, depois da votação ou colado nela): "Segue pra não perder o próximo."
+## CTA de seguir
+Falado (no máximo ~3 s, colado na votação): "Comenta, e segue pra ver o próximo."
 - [ ] Legenda/cartão final: "SEGUE @<usuário do canal>" (seta ou botão desenhado) nos últimos 2s
-- [ ] Legenda do post: 1 linha "Segue pra ver o EP XX" + comentário fixado repete
 - [ ] Variar a frase entre episódios (ex.: "O próximo sai se você seguir", "Segue: o voto de vocês continua amanhã")
 
-## Continuidade (preencher APÓS a votação)
+## Título e descrição
+- Título (até ~40 caracteres, pergunta ou imagem forte):
+- Descrição: gancho + pergunta da votação + @ + hashtags
+
+## Continuidade (só em série com vários episódios; preencher APÓS a votação)
 - Opção vencedora:
 - O que isso muda no próximo ep:
 - Contradições a evitar:

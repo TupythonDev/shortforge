@@ -18,3 +18,7 @@ entity/tendencias/*
 
 # Modelos 3D (46 MB, sem uso nos episódios atuais): ficam so no disco
 entity/modelos3d/
+
+# Cena gerada pelo exemplo (node modelos/ep01/html/gerar.js)
+modelos/ep01/html/cena.html
+modelos/ep01/final/*.mp4
