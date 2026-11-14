@@ -18,3 +18,11 @@ test("render.js sem argumento falha com mensagem (não aceita a pasta atual como
   assert.notStrictEqual(r.status, 0);
   assert.match(r.stderr, /informe/);
 });
+
+for (const f of ["montar-narracao.js", "mixar-sons.js"]) {
+  test(`${f} sem argumento falha com mensagem de uso`, () => {
+    const r = spawnSync(process.execPath, [path.join(dir, f)], { encoding: "utf8" });
+    assert.notStrictEqual(r.status, 0);
+    assert.match(r.stderr, /informe/);
+  });
+}

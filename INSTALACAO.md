@@ -68,12 +68,11 @@ O TikTok exige `--ms_token` (ou a variável `TIKTOK_MS_TOKEN`) e o Instagram exi
 | `OMNIVOICE_MCP_BASE_PATH` e `OMNIVOICE_MCP_OUTPUT_MODE` | base do VoiceStudio = raiz do repositório; modo `files` | `npm run voicestudio -- --aplicar` (seção 4) |
 | `.secrets/` | tokens, se algum dia houver | criar a pasta; está no `.gitignore`. **Nunca commitar tokens** |
 | `.claude/settings.local.json` | ajustes do Claude Code só deste PC e deste projeto (ex.: desligar o Ponytail) | criar à mão; é ignorado pelo Git |
-| `tmp/` | temporários do render | criada sozinha |
 
 ## 4. VoiceStudio (narração)
 
 1. Baixe a release mais recente em `github.com/debpalash/VoiceStudio` (página Releases), instale em qualquer pasta e abra o aplicativo. Enquanto ele estiver aberto, o REST responde em `http://localhost:3900` e o MCP em `http://localhost:3900/mcp/`.
-2. Crie ou importe o perfil de voz de cada canal (clone a partir de uma gravação em português; lições de voz no `CLAUDE.md`). O ID do perfil de cada canal fica no `CLAUDE.md` do canal, em `canais/<canal>/`, e é passado ao `narrar.js` pela variável `VOZ_PERFIL`. **Perfis não viajam com o repositório:** em um PC novo é preciso recriar a voz e atualizar o ID no `CLAUDE.md` do canal.
+2. Crie ou importe o perfil de voz de cada canal (clone a partir de uma gravação em português; lições de voz em `docs/voz.md`). O ID do perfil de cada canal fica no `CLAUDE.md` do canal, em `canais/<canal>/`, e é passado ao `narrar.js` pela variável `VOZ_PERFIL`. **Perfis não viajam com o repositório:** em um PC novo é preciso recriar a voz e atualizar o ID no `CLAUDE.md` do canal.
 3. **Apontar o MCP para este repositório (1 vez por computador):**
 
    ```powershell

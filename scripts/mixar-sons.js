@@ -5,11 +5,15 @@
  * Cues: <pasta-ep>/cues.js (modelo em modelos/ep01/cues.exemplo.js); sem ele, mixa só voz + drone. Lê <pasta-ep>/audio/tempos.json e <pasta-ep>/audio/narracao-final.wav. Grava cues.json ao lado da saída.
  */
 const fs = require("fs"), path = require("path"), { execFileSync } = require("child_process");
-const [video, ep, saida] = process.argv.slice(2);
+const { falhar, arquivoObrigatorio, probeDuracao } = require("./lib/cli");
+const [v0, ep, saida] = process.argv.slice(2);
+if (!ep || !saida) falhar("ERRO: informe vídeo, pasta do episódio e saída. Uso: node scripts/mixar-sons.js <video.mp4> <pasta-ep> <saida.mp4>");
+const video = arquivoObrigatorio(v0, "o vídeo renderizado");
+for (const f of ["tempos.json", "narracao-final.wav"]) arquivoObrigatorio(path.join(ep, "audio", f), `${ep}/audio/${f}`);
 const K = path.join(process.env.USERPROFILE || process.env.HOME, ".claude", "skills", "sound-effects", "sfx", "kit");
 const SONS = path.resolve(__dirname, "..", "entity", "sons");
 const T = JSON.parse(fs.readFileSync(path.join(ep, "audio", "tempos.json"), "utf8")).segmentos;
-const dur = execFileSync("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", video]).toString().trim() * 1;
+const dur = probeDuracao(video);
 const ids = Object.keys(T), g = ids.filter((i) => !/[bc]$/.test(i));
 const ini = g.map((id) => { const i = ids.indexOf(id); return i === 0 ? 0 : (T[ids[i - 1]].fim + T[id].inicio) / 2; });
 const sh = (n) => ini[n - 1];

@@ -12,7 +12,7 @@
 const fs = require("fs");
 const path = require("path");
 const { execFileSync, spawnSync } = require("child_process");
-const { probeDuracao } = require("./lib/cli");
+const { args, falhar, probeDuracao } = require("./lib/cli");
 
 const GAP = 0.3;
 // ecos curtos e baixos: dão o "lugar" da fala sem virar efeito
@@ -21,10 +21,10 @@ const AMBIENTES = {
   festa: "highpass=f=90,aecho=1.0:0.9:70|140:0.08|0.04", // ar livre, um pouco de distância
   porta: "aecho=1.0:0.9:25|45:0.25|0.15", // atrás da porta, dentro de casa
 };
-const dir = process.argv[2];
-if (!dir) { console.error("uso: node scripts/montar-narracao.js <pasta-audio> [--lufs -18]"); process.exit(1); }
-const iL = process.argv.indexOf("--lufs");
-const LUFS = iL > 0 ? parseFloat(process.argv[iL + 1]) : null;
+const opts = args(process.argv.slice(2));
+const dir = opts._[0];
+if (!dir || !fs.existsSync(path.join(dir, "segmentos.json"))) falhar("ERRO: informe a pasta de áudio com segmentos.json. Uso: node scripts/montar-narracao.js <pasta-audio> [--lufs -18]");
+const LUFS = opts.lufs != null ? parseFloat(opts.lufs) : null;
 
 const defs = JSON.parse(fs.readFileSync(path.join(dir, "segmentos.json"), "utf8"));
 const cfg = (id) => (typeof defs[id] === "object" ? defs[id] : {});
@@ -47,7 +47,7 @@ for (const id of ids) {
     .filter((f) => new RegExp("^" + id + "-t[0-9]+\\.wav$").test(f))
     .map((f) => ({ f, d: probeDuracao(path.join(dir, "segs", f)) }))
     .sort((a, b) => a.d - b.d);
-  if (!takes.length) { console.error(`ERRO: sem takes para ${id}. Rode scripts/narrar.js antes.`); process.exit(1); }
+  if (!takes.length) falhar(`ERRO: sem takes para ${id}. Rode scripts/narrar.js antes.`);
   const m = (esc[id] && takes.find((k) => k.f === esc[id].take)) || takes[Math.floor(takes.length / 2)];
   const ini = c.inicio != null ? Number(c.inicio) : t + (c.gap != null ? Number(c.gap) : GAP) + (Number(c.pausa_antes) || 0);
   if (ini < t - 0.001) console.warn(`AVISO: ${id} começa em ${ini.toFixed(2)}s, antes do fim da fala anterior (${t.toFixed(2)}s)`);
