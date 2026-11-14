@@ -60,7 +60,8 @@ async function main() {
       "--disable-dev-shm-usage",
       "--hide-scrollbars",
       "--allow-file-access-from-files", // permite carregar three.js (módulo ES) de node_modules via file://
-      "--use-angle=swiftshader", "--enable-unsafe-swiftshader", // WebGL por software quando não há GPU no headless
+      // WebGL: por software (padrão, funciona sem GPU) ou na placa de vídeo com --gpu (cenas three.js ficam ~10x mais rápidas)
+      ...(opts.gpu ? ["--use-angle=d3d11", "--ignore-gpu-blocklist", "--enable-gpu-rasterization"] : ["--use-angle=swiftshader", "--enable-unsafe-swiftshader"]),
       `--window-size=${LARGURA},${ALTURA}`,
     ],
   });
@@ -70,6 +71,8 @@ async function main() {
     await page.setViewport({ width: LARGURA, height: ALTURA, deviceScaleFactor: 1 });
     await page.goto("file:///" + cena.replace(/\\/g, "/"), { waitUntil: "networkidle0" });
     await page.evaluate(() => document.fonts.ready.then(() => null));
+    // cenas que carregam modelos 3D marcam window.__carregando = true até terminar
+    await page.waitForFunction(() => !window.__carregando, { timeout: 120000 });
 
     // congela as animacoes: pausa tudo uma vez e avanca o tempo a cada frame
     await page.evaluate(() => {

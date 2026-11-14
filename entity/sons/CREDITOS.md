@@ -9,3 +9,25 @@
 - torneira.mp3 — "Tap running" por peridactyloptrix — CC0 1.0 — https://freesound.org/people/peridactyloptrix/sounds/202529
 - fogo.mp3 — "A Small Fire Crackling" por ExplosiveTamale — CC0 1.0 — https://freesound.org/people/ExplosiveTamale/sounds/448361
 - gerador.mp3 — "Fan motor" por Rvgerxini — CC0 1.0 — https://freesound.org/people/Rvgerxini/sounds/518037
+- rio-noite-grilos-sapos.mp3 — "Night close to a river, crickets and frogs, bird sometimes." por felix.blume — CC0 1.0 — https://freesound.org/people/felix.blume/sounds/466955
+- rio-marola.mp3 — "River water flow recorded 5m away, lapping, waterfall Aguas Frias recorded in Amazon rainforest" por felix.blume — CC0 1.0 — https://freesound.org/people/felix.blume/sounds/673963
+- festa-vila-sanfona.mp3 — "JM_AMB_EXT_Village 01 - Folk event with accordion playing - Anzere.wav" por Julien Matthey — CC0 1.0 — https://freesound.org/people/Julien%20Matthey/sounds/134023
+- triangulo.mp3 — "Triangulo.WAV" por fmiramar_ — CC0 1.0 — https://freesound.org/people/fmiramar_/sounds/405411
+- agua-respingo.mp3 — "water splash" por audiosmedia — CC0 1.0 — https://freesound.org/people/audiosmedia/sounds/243519
+- golfinhos-respiro.mp3 — "Atlantic Spotted Dolphins off the coast of La Gomera, Canary Islands" por geraldfiebig — CC0 1.0 — https://freesound.org/people/geraldfiebig/sounds/385796
+- musica-baiao.mp3 — "Baiao" por PequenasAlegrias — BY 3.0 — https://www.jamendo.com/track/1296750
+- musica-sanfonas-loop.mp3 — "crazy accordions loop" por LagMusics — CC0 1.0 — https://freesound.org/people/LagMusics/sounds/654167
+- mata-dia.mp3 — "Sound of Jungle" por kajoo — CC0 1.0 — https://freesound.org/people/kajoo/sounds/628939
+- assobio-sinistro.mp3 — "spooky whistling.mp3" por JuicyFruitNr3 — CC0 1.0 — https://freesound.org/people/JuicyFruitNr3/sounds/241109
+- gotas-pingando.mp3 — "water dripping 2" por hybu — CC0 1.0 — https://freesound.org/people/hybu/sounds/139749
+- corda-rangendo.mp3 — "hamp rope creaks" por 6polnic — CC0 1.0 — https://freesound.org/people/6polnic/sounds/231438
+- festa-conversa.mp3 — "Party background chatter real 1.wav" por dbspin — CC0 1.0 — https://freesound.org/people/dbspin/sounds/396684
+- musica-cheiro-de-festa.mp3 — "Cheiro de Festa - Instrumental de Festa Junina com Sanfona" por RonaldoReyz — Pixabay Content License (uso em vídeo, sem crédito obrigatório; faixa marcada "Content ID Registered" e "AI generated" no Pixabay: o YouTube pode reivindicar) — https://pixabay.com/music/folk-cheiro-de-festa-instrumental-de-festa-junina-com-sanfona-334940/ — baixada pelo dono em 2026-11-11
+- chuva-telhado.mp3 — "Rain on roof (interior perspective)" por xkeril — CC0 1.0 — https://freesound.org/people/xkeril/sounds/610543
+- cantiga-mulher.mp3 — "woman humming" por PSsoundproject — CC0 1.0 — https://freesound.org/people/PSsoundproject/sounds/183565
+- cantiga-mulher-2.mp3 — "woman humming" por coppolaseoul — CC0 1.0 — https://freesound.org/people/coppolaseoul/sounds/712112
+- moeda-cai-mesa.mp3 — "Coin dropped on table 3" por HoseNoseSounds — CC0 1.0 — https://freesound.org/people/HoseNoseSounds/sounds/510732
+- moeda-girando.mp3 — "coin spinning on ceramic plate_2.wav" por tec_studio — CC0 1.0 — https://freesound.org/people/tec_studio/sounds/362760
+- celular-vibra.mp3 — "Cell phone vibrate, on table hard surface.wav" por SpliceSound — CC0 1.0 — https://freesound.org/people/SpliceSound/sounds/369839
+- celular-toca.mp3 — "Cell Phone Ring 2 High Tones(1).mp3" por mrrap4food — CC0 1.0 — https://freesound.org/people/mrrap4food/sounds/619063
+- chuva-cidade-noite.mp3 — "rain_night_city_ambience.mp3" por thoefler — CC0 1.0 — https://freesound.org/people/thoefler/sounds/205956

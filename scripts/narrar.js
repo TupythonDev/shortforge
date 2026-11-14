@@ -24,7 +24,7 @@ const API = "http://localhost:3900/v1/audio/speech";
       const r = await fetch(API, {
         method: "POST",
         headers: { "Content-Type": "application/json; charset=utf-8" },
-        body: JSON.stringify({ model: "omnivoice", voice: voz, input: cfg.texto, response_format: "wav", num_step: 32, speed: cfg.speed || parseFloat(process.env.VELOCIDADE || 0.8), language: "pt-BR", seed: 1000 + t }),
+        body: JSON.stringify({ model: "omnivoice", voice: voz, input: cfg.texto, response_format: "wav", num_step: 32, speed: cfg.speed || parseFloat(process.env.VELOCIDADE || 0.8), language: "pt-BR", seed: 1000 + t, ...(cfg.guidance ? { guidance_scale: cfg.guidance } : {}) }),
       });
       if (!r.ok) throw new Error(`${id} t${t}: HTTP ${r.status} ${await r.text()}`);
       const buf = Buffer.from(await r.arrayBuffer());
