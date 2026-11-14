@@ -19,8 +19,10 @@ O que é de um canal fica em `canais/<canal>/` (`CLAUDE.md` e `identidade.md` de
 
 - Formato: vertical 9:16 (1080×1920), um master de ~64 s para as três plataformas
 - **Uma história = um episódio**, contada inteira (começo, tensão, virada, final). Dividir em vários episódios só quando o dono pedir
-- Roteiro: gancho nos 2 primeiros segundos, frases curtas, uma ideia por frase
-- Fim do episódio: votação com 2–3 opções claras + CTA de seguir (frase falada curta, cartão "SEGUE @usuário" nos últimos 2 s, 1 linha na legenda)
+- Abertura: a fala começa no segundo 0, com a frase mais forte da história, e há texto na tela desde o primeiro quadro. Câmera de ambientação corre por baixo da fala, nunca antes dela
+- Roteiro: frases curtas, uma ideia por frase
+- Fim do episódio: a votação (2–3 opções claras) entra em cartão junto da última fala da história, sem pausa nem troca de clima; CTA falado de no máximo ~3 s; cartão "SEGUE @usuário" nos últimos 2 s; 1 linha na legenda
+- Título: curto (alvo de até ~40 caracteres), uma pergunta ou imagem forte; não resumir a história
 - Visual: legendas grandes sempre (assiste-se sem som), paleta do canal, movimento barato (zoom, pan) antes de animação cara, sem cena repetida entre séries
 - Som: nunca só narração; voz > efeitos > fundo, -16 LUFS (o `mixar-sons.js` mede e ajusta sozinho)
 - Fluxo usual: roteiro → cena HTML → narração → render → mixagem → conferência → publicação. A ordem pode mudar quando fizer sentido (ex.: narrar antes de animar para sincronizar pelos tempos)

@@ -27,3 +27,12 @@ Manual de consulta: ler antes de publicar ou de pesquisar tendências. Reúne li
 - **Método B — libs (`python scripts/tendencias.py`)**: TikTokApi (TikTok hashtag) e instaloader (Instagram hashtag); auditados contra malware e limpos
   - TikTok direto exige `--ms_token` (cookie do navegador logado) ou env `TIKTOK_MS_TOKEN` — sem token a API responde vazia (anti-bot)
   - Instagram exige sessão: criar 1x com `instaloader -l <login-de-conta-secundaria>` e rodar com `--login <login>` — sem sessão dá 403 login_required
+
+## Retenção em Shorts — o que a análise de um vídeo mostrou (2026-11-14)
+
+Vídeo de 87 s, 385 visualizações (amostra pequena: vale a direção, não o número exato):
+- **"Continuaram assistindo" de 14%** foi o que travou a distribuição: a primeira fala só começava aos 3,3 s (antes, só câmera) e era uma pergunta lenta; a retenção caiu de 100% para 60% entre 0:04 e 0:15. É a métrica a olhar primeiro em todo vídeo novo
+- **O meio segurou** (44% a 35% por 45 s): estrutura em etapas curtas, com um detalhe estranho por etapa
+- **O fim perdeu metade de quem restava** (30% para 13%): depois da última frase da história vinham 2 s de pausa, troca para a voz do narrador e mais de 10 s de votação e CTA
+- **Título de 68 caracteres**: cabe no limite de 100 do YouTube, mas é longo para o feed e explicava a história em vez de provocar. Preferir o mesmo gancho curto da capa
+- Daí os padrões de abertura, fim e título no `CLAUDE.md` da raiz
