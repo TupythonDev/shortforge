@@ -13,12 +13,12 @@ Manual de consulta: ler antes de publicar ou de pesquisar tendências. Reúne li
 - **Doctrine completa em `entity/padroes-monetizacao.md`** — ler antes das primeiras publicações de um canal
 - Resumo (REVERIFICADO 2026-11-08 nas páginas oficiais; detalhes e o que ficou sem confirmação em `entity/padroes-monetizacao.md` seção 0): TikTok Rewards exige vídeo ≥60s, 10k seguidores e 100k views/30d (Brasil NÃO aparece na lista oficial e a página não fala de IA: confirmar no app; vídeos de "Série" do TikTok não são elegíveis); YouTube YPP 1k inscritos + 4.000h OU 10M views de Shorts/90d — **a partir de 2027-02-01 sobe para 8.000h ou 20M de Shorts (novos candidatos)**; Instagram: bônus só por convite, sem países/valores públicos → descoberta
 - Preferir UM vídeo master de ~64s para as 3 plataformas (≥60s p/ TikTok; Shorts aceita até 3min; Reels até 90s). Versão curta 30–60s só se for REMOVER um beat do meio (nunca truncar o final com a votação)
-- OBRIGATÓRIO por publicação: rotular "AI-generated content" (voz + visual), sem música licenciada, legenda abre com gancho emocional, "EP XX" na capa
+- Por publicação: sem música licenciada, legenda abre com gancho emocional, "EP XX" na capa; pergunta de uso de IA conforme a seção "Descrição e uso de IA" abaixo
 
 ## TikTok — restrição de feed e Promover (lição de 2026-11-08)
 - **Lição:** um vídeo de tema sensível (terror) com IA rotulada ficou com 0 views e o anúncio do Promover foi rejeitado por "conteúdo impróprio para o feed Para você"; o recurso foi negado. O motivo exato NÃO é informado (palpites: tema sensível = "tópico sensível" e/ou conteúdo de IA = "autenticidade")
-- **Regra:** NÃO pagar Promover em vídeo de tema sensível direto. Testar de forma orgânica; para promover, usar vídeo de bastidores/"como é feito" que diga com honestidade que é série com IA e qual o tema (nunca esconder o tema para passar no filtro). Preferir tom mais leve na capa e no texto (sem apelos de pânico, sem escuro total na capa). O rótulo de IA continua obrigatório
-- **Checklist de feed:** capa clara (sem rosto em choque/escuro total) · legenda e capa sem chamadas alarmistas · hashtags do canal sem a do tema sensível (ex.: sem #terror) · dizer "ficção" e "feito com IA" · rótulo de IA ligado · sem Série. Não garante liberação: medir views nas primeiras horas
+- **Regra:** NÃO pagar Promover em vídeo de tema sensível direto. Testar de forma orgânica; para promover, usar vídeo de bastidores/"como é feito" que diga com honestidade que é série com IA e qual o tema (nunca esconder o tema para passar no filtro). Preferir tom mais leve na capa e no texto (sem apelos de pânico, sem escuro total na capa).
+- **Checklist de feed:** capa clara (sem rosto em choque/escuro total) · legenda e capa sem chamadas alarmistas · hashtags do canal sem a do tema sensível (ex.: sem #terror) · sem Série. Não garante liberação: medir views nas primeiras horas
 - Não aceitar os "Termos de serviço atualizados" do Promover sem o dono decidir (pagamento antecipado = sem reembolso do saldo)
 
 ## Tendências (TikTok/Instagram) — o que está viralizando
@@ -36,3 +36,17 @@ Vídeo de 87 s, 385 visualizações (amostra pequena: vale a direção, não o n
 - **O fim perdeu metade de quem restava** (30% para 13%): depois da última frase da história vinham 2 s de pausa, troca para a voz do narrador e mais de 10 s de votação e CTA
 - **Título de 68 caracteres**: cabe no limite de 100 do YouTube, mas é longo para o feed e explicava a história em vez de provocar. Preferir o mesmo gancho curto da capa
 - Daí os padrões de abertura, fim e título no `CLAUDE.md` da raiz
+
+## Descrição e uso de IA (padrão desde 2026-11-14)
+
+**Descrição / legenda:** gancho emocional, pergunta da votação, @ do canal, hashtags. Não escrever "feito com IA" nem listar créditos de sons CC0 (CC0 e Pixabay não exigem crédito). Crédito na descrição só quando a licença do som exigir (CC BY); o registro de todos os sons continua em `final/CREDITS.txt` do episódio, fora da descrição.
+
+**Pergunta "Uso de IA" do YouTube Studio** (texto do próprio formulário, 2026-11): só pede "Sim" se a IA foi usada para
+- fazer uma pessoa real parecer dizer ou fazer algo que não disse ou fez
+- alterar a filmagem de um evento ou lugar real
+- gerar uma cena com aparência realista que não existiu de verdade
+- criar músicas que sejam o foco principal do vídeo
+
+Animação 2D ilustrada com personagens fictícios não cai em nenhum dos quatro: a resposta é **Não**. Passa a ser **Sim** se o vídeo tiver cena fotorrealista, música gerada como foco, ou voz clonada de uma pessoa real identificável dizendo o que não disse (clone da voz de quem autorizou, usado como voz de personagem fictício, não é esse caso).
+
+**TikTok e Instagram:** cada um tem a própria pergunta; responder pelo texto que aparecer na hora de publicar, com o mesmo critério (realista ou não). Não foi reverificado nas páginas oficiais deles.

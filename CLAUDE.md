@@ -10,7 +10,7 @@ O que é de um canal fica em `canais/<canal>/` (`CLAUDE.md` e `identidade.md` de
 - **Não apagar nada sem confirmar** — tudo pode ser asset futuro
 - **Publicação só com o dono**: sem API; o login é dele; o assistente nunca digita senha, resolve CAPTCHA nem clica em publicar sem confirmação explícita de título, legenda e horário. Não pagar Promover nem aceitar termos sem ele decidir
 - **Nunca commitar tokens** (`.secrets/` está no gitignore)
-- **Rotular conteúdo de IA** em toda publicação e não usar música licenciada
+- **Uso de IA:** responder com honestidade à pergunta de cada plataforma, pelo que ela pergunta de fato (detalhes em `docs/publicacao.md`). Não usar música licenciada
 - **Continuidade**: numa série com vários episódios, nunca contradizer o que o público votou
 - **O final do vídeo é intocável**: nenhum corte ou render pode comer a votação/CTA; conferir os últimos 2 s antes de dar um episódio por pronto
 - Temas sensíveis: sugerir em vez de mostrar, nada explícito
@@ -22,6 +22,7 @@ O que é de um canal fica em `canais/<canal>/` (`CLAUDE.md` e `identidade.md` de
 - Abertura: a fala começa no segundo 0, com a frase mais forte da história, e há texto na tela desde o primeiro quadro. Câmera de ambientação corre por baixo da fala, nunca antes dela
 - Roteiro: frases curtas, uma ideia por frase
 - Fim do episódio: a votação (2–3 opções claras) entra em cartão junto da última fala da história, sem pausa nem troca de clima; CTA falado de no máximo ~3 s; cartão "SEGUE @usuário" nos últimos 2 s; 1 linha na legenda
+- Descrição: gancho, pergunta da votação, @ do canal e hashtags. Sem "feito com IA" e sem lista de créditos de sons CC0 (crédito só quando a licença exigir, como CC BY)
 - Título: curto (alvo de até ~40 caracteres), uma pergunta ou imagem forte; não resumir a história
 - Visual: legendas grandes sempre (assiste-se sem som), paleta do canal, movimento barato (zoom, pan) antes de animação cara, sem cena repetida entre séries
 - Som: nunca só narração; voz > efeitos > fundo, -16 LUFS (o `mixar-sons.js` mede e ajusta sozinho)

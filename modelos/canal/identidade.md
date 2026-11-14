@@ -23,6 +23,6 @@ Definida em <AAAA-MM-DD> (nome escolhido pelo dono).
 - Outras vozes: <perfil e id>
 
 ## Regras de publicação
-- Rotular "AI-generated content" quando a plataforma pedir
+- Uso de IA: responder à pergunta de uso de IA de cada plataforma pelo que ela pergunta de fato (`docs/publicacao.md`); descrição sem "feito com IA" e sem créditos de sons CC0
 - Legenda abre com gancho emocional; pergunta fixa no fim: "<pergunta>"
 - Créditos de áudio de cada episódio em `series/<serie>/epXX/final/CREDITS.txt`

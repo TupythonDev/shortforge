@@ -82,7 +82,7 @@ plataforma, ou o corte é feito no ffmpeg a partir do MP4 master.
 ## 4. Checklist de publicação (por episódio)
 
 - [ ] Original 100% (roteiro/voz/visual próprios) — sem trecho de terceiros
-- [ ] Rótulo "AI-generated" marcado na publicação (voz + visual IA)
+- [ ] Pergunta de uso de IA respondida pelo texto da plataforma (ver `docs/publicacao.md`, "Descrição e uso de IA")
 - [ ] Sem música licenciada; trilha própria
 - [ ] Legenda abre com gancho emocional/suspensa (padrão dos viral BR)
 - [ ] Numeração "EP XX" na capa e título (comprovado no explore)
