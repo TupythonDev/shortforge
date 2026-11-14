@@ -58,5 +58,6 @@ Animação 2D ilustrada com personagens fictícios não cai em nenhum dos quatro
 **Instagram / Meta** (central de ajuda oficial, lida em 2026-11-14): o rótulo "Conteúdo de IA" é **exigido** para vídeo fotorrealista e para **áudio de som realista** gerado ou alterado digitalmente; "pode haver penalidades" para quem não rotular. Imagens não precisam de rótulo.
 - Exemplos da própria página que **exigem**: "um reel narrado com uma sobreposição de voz realista gerada por IA" · "um arquivo de áudio de duas pessoas conversando" · música com vocais de IA · vídeo que parece realista
 - Exemplo que **não exige**: vídeo em estilo de desenho animado
-- Conclusão: pela imagem (animação 2D) não precisa; **pela voz gerada ou clonada, precisa**. Aqui não é interpretação: o caso do reel narrado com voz de IA está escrito na página. Padrão: **ligar o rótulo no Reels** quando a narração ou as falas forem de voz gerada por IA
+- Pela imagem (animação 2D) não precisa; pela voz gerada ou clonada a página pede o rótulo (o caso do reel narrado com voz de IA está escrito nela)
+- **Padrão do estúdio: rótulo desligado** (decisão de 2026-11-14), contrariando esse ponto da regra. Risco assumido: penalidade da Meta por conteúdo não rotulado. Quem preferir seguir a regra à risca liga o rótulo no Reels
 - A Meta também rotula sozinha quando o arquivo traz sinais de IA padrão do setor
