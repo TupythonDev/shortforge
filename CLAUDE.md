@@ -11,15 +11,16 @@ O que é de um canal fica em `canais/<canal>/` (`CLAUDE.md` e `identidade.md` de
 - **Publicação só com o dono**: sem API; o login é dele; o assistente nunca digita senha, resolve CAPTCHA nem clica em publicar sem confirmação explícita de título, legenda e horário. Não pagar Promover nem aceitar termos sem ele decidir
 - **Nunca commitar tokens** (`.secrets/` está no gitignore)
 - **Rotular conteúdo de IA** em toda publicação e não usar música licenciada
-- **Continuidade**: nunca contradizer o que o público votou
+- **Continuidade**: numa série com vários episódios, nunca contradizer o que o público votou
 - **O final do vídeo é intocável**: nenhum corte ou render pode comer a votação/CTA; conferir os últimos 2 s antes de dar um episódio por pronto
 - Temas sensíveis: sugerir em vez de mostrar, nada explícito
 
 ## Padrões (ponto de partida; o canal ou o dono podem mudar)
 
 - Formato: vertical 9:16 (1080×1920), um master de ~64 s para as três plataformas
+- **Uma história = um episódio**, contada inteira (começo, tensão, virada, final). Dividir em vários episódios só quando o dono pedir
 - Roteiro: gancho nos 2 primeiros segundos, frases curtas, uma ideia por frase
-- Fim do episódio: cliffhanger + votação com 2–3 opções que continuam a história + CTA de seguir (frase falada curta, cartão "SEGUE @usuário" nos últimos 2 s, 1 linha na legenda)
+- Fim do episódio: votação com 2–3 opções claras + CTA de seguir (frase falada curta, cartão "SEGUE @usuário" nos últimos 2 s, 1 linha na legenda)
 - Visual: legendas grandes sempre (assiste-se sem som), paleta do canal, movimento barato (zoom, pan) antes de animação cara, sem cena repetida entre séries
 - Som: nunca só narração; voz > efeitos > fundo, -16 LUFS (o `mixar-sons.js` mede e ajusta sozinho)
 - Fluxo usual: roteiro → cena HTML → narração → render → mixagem → conferência → publicação. A ordem pode mudar quando fizer sentido (ex.: narrar antes de animar para sincronizar pelos tempos)

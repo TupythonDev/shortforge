@@ -1,10 +1,10 @@
 # Publicação, monetização e tendências
 
-Manual de consulta: ler antes de publicar ou de pesquisar tendências. Histórico de decisões e lições do dono.
+Manual de consulta: ler antes de publicar ou de pesquisar tendências. Reúne lições já aprendidas na prática.
 
-## Publicação — manual / pelo navegador (decisão do dono, 2026-11-08)
+## Publicação — manual / pelo navegador
 - Cada canal tem suas contas (YouTube, Instagram, TikTok), criadas e logadas pelo dono; os dados ficam na identidade do canal em `canais/<canal>/identidade.md`
-- **Sem API.** Os scripts de publicação por API (`publicar-yt.js`, `publicar-ig.js`, `auth-yt.js`) foram REMOVIDOS: nunca foram testados contra as APIs reais, a API do YouTube exige projeto no Google Cloud e pode travar uploads como privados, e o Google Cloud pediu verificação de identidade (CPF) sem necessidade. Continuam no histórico do git (commits anteriores a 2026-11-08) se um dia forem retomados
+- **Sem API.** Este repositório não publica por API: a do YouTube exige projeto no Google Cloud (que pode pedir verificação de identidade) e pode travar uploads como privados. Publicação é manual ou pelo navegador
 - Como publicar: o dono posta pelo YouTube Studio / app do Instagram / TikTok Studio, ou pede ao assistente para usar o navegador (login feito pelo dono; o assistente NUNCA digita senha, resolve CAPTCHA nem clica em publicar sem confirmação explícita de título, legenda e horário). Textos prontos de cada episódio em `canais/<canal>/series/<serie>/epXX/publicacao.md`
 - `scripts/cortar.js <master.mp4> --plataforma all` → gera `<master>-tiktok/yt/reels.mp4`. **NÃO corta o final por padrão**: master dentro do limite da plataforma (tiktok 90s, yt 180s, reels 90s) sai inteiro; só corta acima disso ou com `--dur N` (e avisa quanto do final foi descartado). Lição: o corte antigo (45s do início) apagava a votação/CTA
 - `.secrets/` está no gitignore — NUNCA commitar tokens
