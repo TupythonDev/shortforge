@@ -51,7 +51,8 @@ Animação 2D ilustrada com personagens fictícios não cai em nenhum dos quatro
 
 **TikTok** (central de ajuda oficial, lida em 2026-11-14): a etiqueta "Conteúdo gerado por AI" é **obrigatória para imagem, áudio e vídeo realistas** e apenas incentivada no resto. A página afirma que a etiqueta não afeta a distribuição e que **não pode ser removida depois de publicar**.
 - Imagem: animação 2D ilustrada não é realista, então por ela a etiqueta não é exigida
-- Áudio: voz sintética ou clonada soa como gente de verdade, e a regra cita "áudio realista". Leitura deste manual: com voz clonada, **ligar a etiqueta no TikTok**; é o lado seguro, porque conteúdo realista não divulgado pode ser removido. A decisão final é do dono do canal
-- Ligar: app → "Mais opções" → "Conteúdo gerado por AI"; computador → "Ver mais" → "Conteúdo gerado por AI"
+- Áudio: a regra cita "áudio realista", o que pode alcançar voz sintética ou clonada; a página não diz isso com essas palavras
+- **Padrão do estúdio: etiqueta desligada** em animação 2D (decisão de 2026-11-14). Risco assumido: se o TikTok entender a voz como áudio realista não divulgado, o vídeo pode ser removido; ele também pode aplicar a etiqueta "Gerado por AI" sozinho. Ligar se o vídeo tiver imagem realista ou a voz de uma pessoa real identificável
+- Onde fica: app → "Mais opções" → "Conteúdo gerado por AI"; computador → "Ver mais" → "Conteúdo gerado por AI"
 
 **Instagram:** tem a própria pergunta; responder pelo texto que aparecer na hora de publicar, com o mesmo critério (realista ou não). Não foi reverificado na página oficial.
