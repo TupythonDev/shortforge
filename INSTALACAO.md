@@ -26,8 +26,8 @@ Inventário completo do que este estúdio usa e como instalar em um computador n
 | Node.js LTS | 26.13 (mínimo 22) | todos os scripts, Puppeteer, `npx` | sim | `winget install OpenJS.NodeJS.LTS` |
 | ffmpeg + ffprobe | 9.0.2 (build gyan.dev) | render, mixagem, cortes, medição de LUFS | sim | `winget install Gyan.FFmpeg` |
 | VoiceStudio | release atual do GitHub | narração por TTS, clone de voz | sim, para narrar | seção 4 |
-| Driver NVIDIA/CUDA | qualquer atual (RTX 2060 gera ~5 s por take) | acelera o VoiceStudio; sem GPU funciona mais devagar | recomendado | site da NVIDIA |
-| Python | 3.12 | método B de tendências | não | `winget install Python.Python.3.12` |
+| Placa de vídeo com driver atual | qualquer (RTX 2060 gera ~5 s por take) | o `render.js` desenha pela GPU por padrão (sem ela: `--sem-gpu`, ~20x mais lento); NVIDIA/CUDA acelera o VoiceStudio | recomendado | site da NVIDIA |
+| Python | 3.12 | escolha automática de takes (`avaliar-takes.py`) e método B de tendências | não | `winget install Python.Python.3.12` |
 | uv | 0.13 | instalador/gerenciador Python usado por algumas ferramentas | não | `winget install astral-sh.uv` |
 | yt-dlp | 2026.10.26 | baixar vídeos de referência | não | `winget install yt-dlp.yt-dlp` |
 | Google Chrome | atual | login e publicação pelo navegador (extensão Claude in Chrome) | para publicar pelo navegador | site do Google |
@@ -50,9 +50,14 @@ cd "IA Data"
 npm install
 ```
 
-- O `npm install` instala o **Puppeteer** (25.16), que baixa o próprio Chromium para a pasta de cache do usuário. Ele é usado por `render.js`, `tendencias.js` e pelos geradores de cena e miniatura.
+- O `npm install` instala o **Puppeteer** (25.16), que baixa o próprio Chromium para a pasta de cache do usuário (usado por `render.js`, `tendencias.js` e pelos geradores de cena e miniatura), e o **three** (cenas com câmera 3D).
+- O `render.js` abre vários Chromes em paralelo (padrão: metade dos núcleos, até 6; cada um usa algumas centenas de MB). Em máquina fraca, use `--workers 2`.
 
-### Dependências Python (opcionais, só tendências método B)
+### Dependências Python (opcionais)
+
+Escolha automática de takes (`scripts/avaliar-takes.py`): `pip install numpy`. A transcrição usa o ASR do VoiceStudio ou, sem modelo de ASR ativo no app, as variáveis `WHISPER_PY` e `WHISPER_MODELO` (ver `docs/voz.md`).
+
+Tendências método B:
 
 ```powershell
 pip install TikTokApi==7.3.3 instaloader==4.16 playwright==1.64.1
@@ -102,7 +107,7 @@ Para desligar um plugin só neste projeto, crie `.claude/settings.local.json` na
 { "enabledPlugins": { "ponytail@ponytail": false } }
 ```
 
-**Hyperframes (HeyGen):** o marketplace `heygen-com/hyperframes` está **registrado** nas configurações do usuário, mas nenhum plugin dele foi instalado, e o código não foi auditado. Não é necessário para o pipeline.
+**HyperFrames (HeyGen):** avaliado e não adotado (motivos em `docs/video.md`). Não é necessário para o pipeline.
 
 ### 5.2 Skills de usuário (`~/.claude/skills/`)
 
@@ -131,12 +136,12 @@ As versões de `remotion`, `animation-skills` e `superpowers` que aparecem no ap
 ### 5.5 Configuração pessoal do Claude Code (fora do repositório)
 
 - `~/.claude/CLAUDE.md`: instruções globais do usuário, escritas à mão e fora do repositório.
-- `~/.claude/settings.json`: idioma, permissões, plugins habilitados e marketplaces conhecidos (`ponytail`, `i-have-adhd` e `hyperframes`). Os comandos `claude plugin marketplace add` da seção 5.1 recriam essa parte.
+- `~/.claude/settings.json`: idioma, permissões, plugins habilitados e marketplaces conhecidos. Os comandos `claude plugin marketplace add` da seção 5.1 recriam essa parte.
 
 ## 6. Verificação
 
 ```powershell
-npm test                     # 16 testes de sintaxe e argumentos dos scripts
+npm test                     # 18 testes de sintaxe e argumentos dos scripts
 npm run voicestudio          # variável do VoiceStudio aponta para este repositório?
 ffmpeg -version
 claude plugin list
@@ -166,6 +171,8 @@ Teste completo (com o VoiceStudio aberto): siga o fluxo de comandos de `modelos/
 | `ffmpeg` não é reconhecido | terminal aberto antes da instalação: recarregue o PATH (seção 1) |
 | `mixar-sons.js` não acha os sons | skill `sound-effects` não instalada (seção 5.2) |
 | Plugin ligado onde não deveria | falta o `.claude/settings.local.json` do projeto (seção 5.1) |
+| Render muito lento (~1 quadro/s) ou quadros pretos | sem aceleração de vídeo: atualize o driver; se não houver GPU, rode com `--sem-gpu` |
+| Render trava ou falta memória | Chromes demais em paralelo: `--workers 2` |
 | Render termina sem os 2 s finais (CTA) | o áudio passado ao render precisa de `apad` no fim (o `-shortest` corta o vídeo) |
 | O navegador do `tendencias.js` faz barulho | ele deve rodar com `--mute-audio`; não remova a flag |
 

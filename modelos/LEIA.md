@@ -23,8 +23,8 @@ Fluxo de comandos de um episódio (rodar da raiz do projeto):
 node scripts/narrar.js canais/<canal>/series/<serie>/epXX/audio/segmentos.json canais/<canal>/series/<serie>/epXX/audio   # 3 takes por trecho (VoiceStudio aberto; defina VOZ_PERFIL=<id do perfil do canal>)
 node scripts/montar-narracao.js canais/<canal>/series/<serie>/epXX/audio                                     # concat + tempos.json
 node canais/<canal>/series/<serie>/epXX/html/gerar.js                                                        # cena HTML sincronizada com os tempos
-node scripts/render.js canais/<canal>/series/<serie>/epXX/html/cena01.html --duracao <s> --audio <wav com apad> --saida canais/<canal>/series/<serie>/epXX/final/epXX-v1.mp4
+node scripts/render.js canais/<canal>/series/<serie>/epXX/html/cena01.html --audio <wav com apad> --saida canais/<canal>/series/<serie>/epXX/final/epXX-v1.mp4
 node scripts/mixar-sons.js <mp4> canais/<canal>/series/<serie>/epXX <saida-som.mp4>                           # efeitos + drone, -16 LUFS
 npm test                                                                                      # testes dos scripts
 ```
-Copie `html/gerar.js` e `audio/segmentos.json` de um episódio existente do canal como ponto de partida. Os cues de som ficam em `cues.js` dentro do episódio (modelo em `cues.exemplo.js`; sem ele, `scripts/mixar-sons.js` mixa só voz + drone). Antes de tudo, leia o `CLAUDE.md` e a `identidade.md` do canal.
+Copie `html/gerar.js` e `audio/segmentos.json` de um episódio existente do canal como ponto de partida (no primeiro episódio não há de onde copiar: o contrato da cena está em `docs/video.md`). Os cues de som ficam em `cues.js` dentro do episódio (modelo em `cues.exemplo.js`; sem ele, `scripts/mixar-sons.js` mixa só voz + drone). Antes de tudo, leia o `CLAUDE.md` e a `identidade.md` do canal.
