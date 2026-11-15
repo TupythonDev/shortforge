@@ -6,6 +6,7 @@
  * (heurística sem ouvir: descarta o mais rápido/mais lento).
  * Posição: "inicio" (s, absoluto) fixa a fala num ponto da cena; sem ele, a fala segue a anterior após
  * "gap" (s; padrão 0,3) + "pausa_antes" (s, o espaço das cenas de câmera sem fala).
+ * Ritmo (opcional): "ritmo" < 1 desacelera a fala depois de gerada (atempo, sem mudar o tom; 0,9 = 10% mais lenta). Serve quando o clone fala corrido e baixar o speed do TTS soaria robótico.
  * Som (opcional): "af" = filtro ffmpeg aplicado na montagem (ou um nome de AMBIENTES abaixo); com --lufs cada fala
  * é levada a esse volume por ganho fixo (não comprime: preserva a entonação), mais "ganho_db" do segmento.
  */
@@ -51,11 +52,12 @@ for (const id of ids) {
   const m = (esc[id] && takes.find((k) => k.f === esc[id].take)) || takes[Math.floor(takes.length / 2)];
   const ini = c.inicio != null ? Number(c.inicio) : t + (c.gap != null ? Number(c.gap) : GAP) + (Number(c.pausa_antes) || 0);
   if (ini < t - 0.001) console.warn(`AVISO: ${id} começa em ${ini.toFixed(2)}s, antes do fim da fala anterior (${t.toFixed(2)}s)`);
-  const af = c.af ? AMBIENTES[c.af] || c.af : "";
+  const rit = Number(c.ritmo) || 1;
+  const af = [rit !== 1 ? `atempo=${rit}` : "", c.af ? AMBIENTES[c.af] || c.af : ""].filter(Boolean).join(",");
   const ganho = LUFS != null ? LUFS - lufs(path.join(dir, "segs", m.f), af) + (Number(c.ganho_db) || 0) : Number(c.ganho_db) || 0;
   pecas.push({ f: path.join(dir, "segs", m.f), ini, af, ganho });
-  tempos[id] = { take: m.f, inicio: +ini.toFixed(3), fim: +(ini + m.d).toFixed(3) };
-  t = ini + m.d;
+  tempos[id] = { take: m.f, inicio: +ini.toFixed(3), fim: +(ini + m.d / rit).toFixed(3) };
+  t = ini + m.d / rit;
 }
 
 // cada fala entra no seu instante (adelay) e tudo é somado; pausa final de GAP mantém a duração histórica

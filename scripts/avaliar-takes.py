@@ -4,7 +4,7 @@ avaliar-takes.py <pasta-audio> — mede cada take de audio/segs/ e escolhe o mel
 Critérios: (1) a transcrição do take (ASR do VoiceStudio, localhost:3900) bate com o texto — descarta take que
 engole ou troca palavra; (2) expressividade: variação de tom (desvio em semitons) — fala "chapada" perde;
 (3) pergunta ("?") ganha se o tom sobe no fim; (4) pausa interna longa sem "..." no texto perde; (5) duração
-acima de "max" (segundos, opcional no segmento) elimina. Grava <pasta>/escolhas.json, lido por montar-narracao.js.
+acima de "max" (segundos, opcional no segmento) elimina; "expr_max" (semitões, opcional) segura a variação de tom em falas calmas. Grava <pasta>/escolhas.json, lido por montar-narracao.js.
 Não substitui ouvir: é um filtro para levar só os takes plausíveis ao ouvido do dono.
 """
 import json, os, re, subprocess, sys, unicodedata, difflib, wave
@@ -105,7 +105,10 @@ def avaliar(f, cfg, texto_asr):
     pm = pausa_max(x, sr)
     pena = max(0.0, pm - (1.1 if "..." in cfg["texto"] else 0.6)) * 3
     if cfg.get("max") and dur > cfg["max"]: pena += 100
-    score = 4 * sim + min(expr, 4.5) + (0.6 * np.clip(sobe, -2, 3) if sobe else 0) - pena - (100 if sim < 0.75 else 0)
+    # "expr_max" (opcional, em semitões): fala calma/baixa não deve "cantar"; acima do limite o take perde ponto em vez de ganhar
+    lim = cfg.get("expr_max", 4.5)
+    pena += max(0.0, expr - lim) * 3
+    score = 4 * sim + min(expr, lim) + (0.6 * np.clip(sobe, -2, 3) if sobe else 0) - pena - (100 if sim < 0.75 else 0)
     return dict(dur=round(dur, 2), sim=round(sim, 2), expr=round(expr, 2), sobe=round(sobe, 2), pausa=round(pm, 2),
                 score=round(float(score), 2), asr=texto_asr.strip())
 

@@ -31,3 +31,9 @@
 - celular-vibra.mp3 — "Cell phone vibrate, on table hard surface.wav" por SpliceSound — CC0 1.0 — https://freesound.org/people/SpliceSound/sounds/369839
 - celular-toca.mp3 — "Cell Phone Ring 2 High Tones(1).mp3" por mrrap4food — CC0 1.0 — https://freesound.org/people/mrrap4food/sounds/619063
 - chuva-cidade-noite.mp3 — "rain_night_city_ambience.mp3" por thoefler — CC0 1.0 — https://freesound.org/people/thoefler/sounds/205956
+- passos-madeira-meia.mp3 — "footsteps socks wood" por Yuval — CC0 1.0 — https://freesound.org/people/Yuval/sounds/210770
+- tabua-range-1.mp3 — "Wood Floor Creaking 3_8" por Joao_Janz — CC0 1.0 — https://freesound.org/people/Joao_Janz/sounds/504041
+- tabua-range-longa.mp3 — "Wood Floor Creaking Long 3_9" por Joao_Janz — CC0 1.0 — https://freesound.org/people/Joao_Janz/sounds/504120
+- galo-longe.mp3 — "Rooster crowing - far away.wav" por Wax_vibe — CC0 1.0 — https://freesound.org/people/Wax_vibe/sounds/642780
+- trinco-madeira.mp3 — "Wood Door Close with Metal Latch 01" por MadMaxSFX — CC0 1.0 — https://freesound.org/people/MadMaxSFX/sounds/352330
+- respiracao-tensa.mp3 — "NERVOUS BREATHING.wav" por ThatMisfit — CC0 1.0 — https://freesound.org/people/ThatMisfit/sounds/388773
