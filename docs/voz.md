@@ -5,6 +5,7 @@ Manual de consulta: ler antes de gerar, clonar ou montar narração.
 ## VoiceStudio — voz (PADRÃO)
 - Com o app aberto, o REST responde em `http://localhost:3900` e o MCP em `http://localhost:3900/mcp/` (instalação e configuração: `INSTALACAO.md`, seção 4)
 - **Cada canal tem sua voz oficial** (perfil do VoiceStudio), registrada na identidade/`CLAUDE.md` do canal em `canais/<canal>/`. Não usar a voz de um canal em outro, salvo decisão explícita do dono registrada no `CLAUDE.md` do canal que a reaproveita. Listar os perfis existentes pelo app/REST antes de criar um novo; perfis descartados devem ser apagados para não confundir
+- **Ciclo de vida (padrão do assistente):** ao começar a produzir um vídeo e precisar de voz, abrir o VoiceStudio sem janela (comando abaixo) se ele não estiver respondendo; ao terminar tudo e o dono dizer que está bom, fechar. Não fechar no meio da produção
 - **Abrir sem janela (Windows):** `Start-Process "<pasta do VoiceStudio>\VoiceStudio.exe" -WindowStyle Hidden`; o REST responde em `localhost:3900` em ~15 s e nenhum processo cria janela (testado 2026-11-14). Para fechar: `Get-Process VoiceStudio,voicestudio-desktop-bridge | Stop-Process`
 - Settings padrão: `steps: 32` (qualidade), `language: "pt-BR"`
 - **Gerar 3 takes por trecho e escolher o melhor** — geração não é determinística; manda `seed` para reprodutibilidade; `instruct` no `/v1/audio/speech` é aceito (200) mas NÃO produz sussurro (testado: fração de fala com tom 0,53 vs 0,02 de um perfil sussurrado) — não confiar nele
