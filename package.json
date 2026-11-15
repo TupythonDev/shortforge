@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Estúdio de séries interativas multicanal (Shorts/TikTok): roteiro, narração, cena HTML, render e mixagem",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "type": "commonjs",
   "scripts": {
     "test": "node --test tests/",

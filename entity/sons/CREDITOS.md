@@ -22,7 +22,7 @@
 - gotas-pingando.mp3 — "water dripping 2" por hybu — CC0 1.0 — https://freesound.org/people/hybu/sounds/139749
 - corda-rangendo.mp3 — "hamp rope creaks" por 6polnic — CC0 1.0 — https://freesound.org/people/6polnic/sounds/231438
 - festa-conversa.mp3 — "Party background chatter real 1.wav" por dbspin — CC0 1.0 — https://freesound.org/people/dbspin/sounds/396684
-- musica-cheiro-de-festa.mp3 — "Cheiro de Festa - Instrumental de Festa Junina com Sanfona" por RonaldoReyz — Pixabay Content License (uso em vídeo, sem crédito obrigatório; faixa marcada "Content ID Registered" e "AI generated" no Pixabay: o YouTube pode reivindicar) — https://pixabay.com/music/folk-cheiro-de-festa-instrumental-de-festa-junina-com-sanfona-334940/ — baixada pelo dono em 2026-11-11
+- musica-cheiro-de-festa.mp3 — "Cheiro de Festa - Instrumental de Festa Junina com Sanfona" por RonaldoReyz — Pixabay Content License (uso em vídeo, sem crédito obrigatório; faixa marcada "Content ID Registered" e "AI generated" no Pixabay: o YouTube pode reivindicar) — https://pixabay.com/music/folk-cheiro-de-festa-instrumental-de-festa-junina-com-sanfona-334940/ — baixada pelo dono em 2026-11-11 — **fora do Git** (a licença não permite redistribuir o arquivo solto): quem clonar baixa pelo link e salva com este nome
 - chuva-telhado.mp3 — "Rain on roof (interior perspective)" por xkeril — CC0 1.0 — https://freesound.org/people/xkeril/sounds/610543
 - cantiga-mulher.mp3 — "woman humming" por PSsoundproject — CC0 1.0 — https://freesound.org/people/PSsoundproject/sounds/183565
 - cantiga-mulher-2.mp3 — "woman humming" por coppolaseoul — CC0 1.0 — https://freesound.org/people/coppolaseoul/sounds/712112

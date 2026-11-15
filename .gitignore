@@ -19,6 +19,9 @@ entity/tendencias/*
 # Modelos 3D (46 MB, sem uso nos episódios atuais): ficam so no disco
 entity/modelos3d/
 
+# Musica do Pixabay: a licenca nao permite redistribuir o arquivo (ver entity/sons/CREDITOS.md)
+entity/sons/musica-cheiro-de-festa.mp3
+
 # Cena gerada pelo exemplo (node modelos/ep01/html/gerar.js)
 modelos/ep01/html/cena.html
 modelos/ep01/final/*.mp4
