@@ -46,6 +46,7 @@ Os manuais guardam lições já aprendidas (o que deu errado e por quê). Liçã
 ```
 npm run narrar  -- <segmentos.json> <pasta-audio>        # takes de TTS (VoiceStudio em localhost:3900)
 npm run montar  -- <pasta-audio> [--lufs -18]            # narracao.wav + tempos.json
+npm run palavras -- <pasta-audio>                        # tempo de cada palavra em tempos.json (Whisper local)
 npm run render  -- <cena.html> --audio <wav> --saida <mp4>
 npm run sons    -- <mp4> <pasta-ep> <saida.mp4>          # mixa voz + cues.js do episódio
 npm run sons:buscar -- "termo" --cc0                     # Openverse → entity/sons/
