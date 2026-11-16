@@ -1,4 +1,4 @@
-# Estúdio de Séries — Multicanal
+# ShortForge — Estúdio de Séries Multicanal
 
 Séries narrativas em vídeo vertical para vários canais, cada um com seu tema. **Tudo em PT-BR.**
 

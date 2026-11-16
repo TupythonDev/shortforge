@@ -1,6 +1,6 @@
-# Estúdio de Séries
+# ShortForge
 
-Ferramentas para produzir séries narrativas em vídeo vertical (Shorts, Reels, TikTok) a partir de código: o roteiro vira narração por TTS, a cena é uma página HTML animada, o render sai pelo Chromium e a mixagem pelo ffmpeg.
+Estúdio de séries narrativas em vídeo vertical. Ferramentas para produzir séries narrativas em vídeo vertical (Shorts, Reels, TikTok) a partir de código: o roteiro vira narração por TTS, a cena é uma página HTML animada, o render sai pelo Chromium e a mixagem pelo ffmpeg.
 
 O repositório guarda **as ferramentas, os manuais e os modelos**. O conteúdo de cada canal (roteiros, vozes, vídeos) fica só no disco de quem produz, em `canais/`, e não é versionado.
 
