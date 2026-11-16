@@ -1,6 +1,16 @@
 const test = require("node:test");
 const assert = require("node:assert");
-const { args } = require("../scripts/lib/cli");
+const { args, tamanhoDoVideo } = require("../scripts/lib/cli");
+
+test("tamanhoDoVideo: padrão vertical, --horizontal e medidas explícitas", () => {
+  assert.deepStrictEqual(tamanhoDoVideo({}), { largura: 1080, altura: 1920 });
+  assert.deepStrictEqual(tamanhoDoVideo({ horizontal: true }), { largura: 1920, altura: 1080 });
+  assert.deepStrictEqual(tamanhoDoVideo({ largura: "2560", altura: "1440" }), { largura: 2560, altura: 1440 });
+});
+
+test("tamanhoDoVideo: recusa medida ímpar, fora do limite ou não numérica", () => {
+  for (const o of [{ largura: "1921" }, { altura: "abc" }, { largura: "10" }, { largura: "9000" }]) assert.ok(tamanhoDoVideo(o).erro, JSON.stringify(o));
+});
 
 test("args: flags com valor e argumentos posicionais", () => {
   const o = args(["video.mp4", "--titulo", "Ep 1", "--dur", "45"]);

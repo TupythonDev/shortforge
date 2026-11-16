@@ -38,4 +38,17 @@ function probeDuracao(arquivo) {
   return parseFloat(JSON.parse(out).format.duration);
 }
 
-module.exports = { args, falhar, arquivoObrigatorio, probeDuracao };
+/**
+ * Tamanho do vídeo a partir de --largura/--altura ou do atalho --horizontal (1920x1080). Padrão: vertical 1080x1920.
+ * Devolve { largura, altura } ou { erro } (yuv420p exige medidas pares).
+ */
+function tamanhoDoVideo(opts) {
+  const padrao = opts.horizontal ? [1920, 1080] : [1080, 1920];
+  const largura = opts.largura != null ? Number(opts.largura) : padrao[0];
+  const altura = opts.altura != null ? Number(opts.altura) : padrao[1];
+  const ok = (n) => Number.isInteger(n) && n >= 64 && n <= 7680 && n % 2 === 0;
+  if (!ok(largura) || !ok(altura)) return { erro: `ERRO: tamanho inválido ${opts.largura ?? largura}x${opts.altura ?? altura}; use números pares entre 64 e 7680 (ex.: --largura 1920 --altura 1080).` };
+  return { largura, altura };
+}
+
+module.exports = { args, falhar, arquivoObrigatorio, probeDuracao, tamanhoDoVideo };

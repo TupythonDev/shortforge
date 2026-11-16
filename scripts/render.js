@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * render.js — renderiza um HTML animado (cena de episódio) em MP4 vertical 1080x1920.
+ * render.js — renderiza um HTML animado (cena de episódio) em MP4 (padrão: vertical 1080x1920).
  *
  * HTML animado (CSS/JS) -> vários Chromes capturam os quadros em paralelo (cada quadro é um
  * instante fixo da animação, então o resultado é determinístico) -> os JPEGs vão direto para o
@@ -9,6 +9,8 @@
  * Uso:
  *   node scripts/render.js <cena.html> --saida final/ep01.mp4 [--audio audio/narracao.wav] [--duracao 10] [--fps 30]
  *
+ *   --horizontal  16:9 (1920x1080); ou --largura N --altura N para outro tamanho (números pares). A cena HTML
+ *                 tem que ser desenhada para o tamanho escolhido: o render só abre o Chrome nele
  *   --duracao N   segundos; sem ela, usa a duração do --audio
  *   --workers N   Chromes em paralelo (padrão: metade dos núcleos, no máximo 6)
  *   --sem-gpu     desenha por software (lento, ~1 quadro/s); só para máquina sem placa de vídeo
@@ -21,14 +23,12 @@ const fs = require("fs");
 const os = require("os");
 const path = require("path");
 const { spawn } = require("child_process");
-const { args, falhar, arquivoObrigatorio, probeDuracao } = require("./lib/cli");
+const { args, falhar, arquivoObrigatorio, probeDuracao, tamanhoDoVideo } = require("./lib/cli");
 
 const ROOT = path.resolve(__dirname, "..");
-const LARGURA = 1080;
-const ALTURA = 1920;
 
 /** Abre um Chrome com a cena carregada e as animações CSS pausadas, pronta para receber tempos. */
-async function abrirCena(puppeteer, cena, gpu) {
+async function abrirCena(puppeteer, cena, gpu, { largura: LARGURA, altura: ALTURA }) {
   const browser = await puppeteer.launch({
     headless: "new",
     args: [
@@ -63,7 +63,9 @@ async function quadro(page, seg) {
 }
 
 async function main() {
-  const opts = args(process.argv.slice(2), { booleanas: ["gpu", "sem-gpu"] });
+  const opts = args(process.argv.slice(2), { booleanas: ["gpu", "sem-gpu", "horizontal"] });
+  const tam = tamanhoDoVideo(opts);
+  if (tam.erro) falhar(tam.erro);
   const cena = arquivoObrigatorio(opts._[0], "o HTML da cena (ex.: node scripts/render.js cena.html --duracao 10 --saida ep01.mp4)");
   const saida = path.resolve(opts.saida || path.join(ROOT, "saida.mp4"));
   const fps = parseInt(opts.fps || 30, 10);
@@ -80,7 +82,7 @@ async function main() {
   const frames = Math.round(duracao * fps);
   const workers = Math.max(1, Math.min(frames, parseInt(opts.workers, 10) || Math.min(6, Math.floor(os.cpus().length / 2) || 1)));
   console.log(`Cena:    ${cena}`);
-  console.log(`Duração: ${duracao.toFixed(2)}s @ ${fps}fps -> ${frames} quadros · ${workers} Chrome(s) · ${gpu ? "GPU" : "software"}`);
+  console.log(`Duração: ${duracao.toFixed(2)}s @ ${fps}fps -> ${frames} quadros · ${tam.largura}x${tam.altura} · ${workers} Chrome(s) · ${gpu ? "GPU" : "software"}`);
 
   fs.mkdirSync(path.dirname(saida), { recursive: true });
   const ff = spawn("ffmpeg", [
@@ -117,7 +119,7 @@ async function main() {
   await Promise.all(Array.from({ length: workers }, async () => {
     let c;
     try {
-      c = await abrirCena(puppeteer, cena, gpu);
+      c = await abrirCena(puppeteer, cena, gpu, tam);
       while (!falha) {
         const i = proximo++;
         if (i >= frames) break;
