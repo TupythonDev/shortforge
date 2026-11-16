@@ -26,7 +26,7 @@ O que é de um canal fica em `canais/<canal>/` (`CLAUDE.md` e `identidade.md` de
 - Título: curto (alvo de até ~40 caracteres), uma pergunta ou imagem forte; não resumir a história
 - Visual: legendas grandes sempre (assiste-se sem som), paleta do canal, movimento barato (zoom, pan) antes de animação cara, sem cena repetida entre séries
 - Som: nunca só narração; voz > efeitos > fundo, -16 LUFS (o `mixar-sons.js` mede e ajusta sozinho)
-- Fluxo usual: roteiro → cena HTML → narração → render → mixagem → conferência → publicação. A ordem pode mudar quando fizer sentido (ex.: narrar antes de animar para sincronizar pelos tempos)
+- Fluxo usual: roteiro → cena HTML → narração → render → mixagem → conferência → publicação → limpeza (skill `concluir-episodio`: simula, mostra e só apaga com o sim do dono). A ordem pode mudar quando fizer sentido (ex.: narrar antes de animar para sincronizar pelos tempos)
 
 ## Manuais (ler só quando a tarefa pedir)
 
