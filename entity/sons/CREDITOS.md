@@ -37,3 +37,11 @@
 - galo-longe.mp3 — "Rooster crowing - far away.wav" por Wax_vibe — CC0 1.0 — https://freesound.org/people/Wax_vibe/sounds/642780
 - trinco-madeira.mp3 — "Wood Door Close with Metal Latch 01" por MadMaxSFX — CC0 1.0 — https://freesound.org/people/MadMaxSFX/sounds/352330
 - respiracao-tensa.mp3 — "NERVOUS BREATHING.wav" por ThatMisfit — CC0 1.0 — https://freesound.org/people/ThatMisfit/sounds/388773
+- descarga-boxe.mp3 — "Stall Toilet Flush" por gtsorbo — CC0 1.0 — https://freesound.org/people/gtsorbo/sounds/272012
+- descarga.mp3 — "Toilet Flush" por Worldsday — CC0 1.0 — https://freesound.org/people/Worldsday/sounds/161874
+- esfregao-piso.mp3 — "Mopping the floor.wav" por BeeProductive — CC0 1.0 — https://freesound.org/people/BeeProductive/sounds/395603
+- patio-escola-longe.mp3 — "SFX high school playground distant 02-01.wav" por nickpursehouse — CC0 1.0 — https://freesound.org/people/nickpursehouse/sounds/132855
+- risadinha-menina.mp3 — "Girl Giggling" por MadamVicious — CC0 1.0 — https://freesound.org/people/MadamVicious/sounds/218185
+- porta-range.mp3 — "Wooden door creaking" por TheBuilder15 — CC0 1.0 — https://freesound.org/people/TheBuilder15/sounds/367052
+- vassoura-cai.mp3 — "plastic broom drop.wav" por N.A.N.I. — CC0 1.0 — https://freesound.org/people/N.A.N.I./sounds/128619
+- balde-esfregao.mp3 — "mop bucket full pick up put down floor thud plastic rattle.flac" por kyles — CC0 1.0 — https://freesound.org/people/kyles/sounds/451902
