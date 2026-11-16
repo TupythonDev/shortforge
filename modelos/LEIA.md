@@ -28,3 +28,14 @@ node scripts/mixar-sons.js <mp4> canais/<canal>/series/<serie>/epXX <saida-som.m
 npm test                                                                                      # testes dos scripts
 ```
 `ep01/` já vem com um exemplo que funciona: `audio/segmentos.json` (falas, com a palavra de `destaque` da legenda) e `html/gerar.js` (cena com legendas sincronizadas, cartão de votação junto da última fala e cartão SEGUE nos últimos 2 s). Sem voz ainda, `node <ep>/html/gerar.js` estima os tempos e já dá para renderizar e ver. Troque o texto, o desenho, as cores e o @ no topo do `gerar.js`; depois, copie de um episódio seu. O contrato da cena está em `docs/video.md`. Os cues de som ficam em `cues.js` dentro do episódio (modelo em `cues.exemplo.js`; sem ele, `scripts/mixar-sons.js` mixa só voz + drone). Antes de tudo, leia o `CLAUDE.md` e a `identidade.md` do canal.
+
+## Vídeo longo e horizontal (16:9)
+
+Para um canal de vídeos de vários minutos em 1920×1080 (por exemplo, história de algum tema), use `ep-longo/` no lugar de `ep01/`:
+
+- `roteiro.md` é por capítulos, com fontes, fatos a conferir e direitos de cada imagem
+- `audio/segmentos.json`: o 1º segmento de cada capítulo leva `"cap"` (título); `"cena"` põe uma imagem de `assets/` na tela, com zoom lento, até a próxima `cena`
+- `html/gerar.js`: cena horizontal com legenda embaixo (a palavra falada acende quando há `npm run palavras`), cartão de capítulo, barra de progresso e cartão final. Imprime os capítulos em mm:ss para a descrição do YouTube
+- Render: `node scripts/render.js <cena.html> --horizontal --duracao N --audio <wav com apad> --saida <mp4>`
+- Medido com a cena de exemplo (3 imagens, legendas por palavra): 24 a 27 quadros/s em 1920×1080. Um vídeo de 10 min ainda não foi renderizado de ponta a ponta; ver `docs/video.md`
+- O `ep-longo/` é um ponto de partida para copiar e redesenhar, como o `ep01/`

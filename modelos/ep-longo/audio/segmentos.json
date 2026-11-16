@@ -1,0 +1,9 @@
+{
+  "a01": { "texto": "Antes de existir console, existia o fliperama no canto do bar.", "cap": "Capítulo de exemplo: o começo", "cena": "cena01.jpg", "destaque": "fliperama" },
+  "a02": { "texto": "Uma moeda, uma partida. Quem errava perdia a vez para o próximo da fila." },
+  "a03": { "texto": "Foi ali que a ideia de pontuação virou hábito." },
+  "b01": { "texto": "Depois veio a máquina que cabia na sala de casa.", "cap": "Capítulo de exemplo: a sala de estar", "cena": "cena02.jpg" },
+  "b02": { "texto": "A televisão da família passou a ter outra função, e a rotina da casa mudou junto." },
+  "c01": { "texto": "Cada geração achou que o jogo ideal era o que ela tinha jogado.", "cap": "Capítulo de exemplo: o que ficou", "cena": "cena03.jpg" },
+  "c02": { "texto": "Se gostou, segue o canal: o próximo vídeo continua daqui.", "destaque": "segue" }
+}

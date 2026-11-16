@@ -10,7 +10,7 @@ Só o que nunca pode ser quebrado neste canal (decisões do dono, limites do tem
 ## Como o canal costuma fazer (ponto de partida, não trava)
 
 - **Tom:** <ex.: narrador sombrio, em 2ª pessoa>
-- **Tamanho e formato:** <ex.: 60–90 s, diálogo entre personagens>
+- **Tamanho e formato:** <ex.: 60–90 s vertical 1080×1920 (padrão) ou longo horizontal 1920×1080, `render.js --horizontal`; modelo em `modelos/ep-longo/`>
 - **Votação e fim:** <tipo de pergunta> + cartão "SEGUE @<usuario>"
 - **Visual:** <estilo; apontar um episódio pronto como exemplo>
 - **Paleta:** <cores em hexadecimal e uso>
