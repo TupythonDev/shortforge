@@ -50,6 +50,7 @@ npm run palavras -- <pasta-audio>                        # tempo de cada palavra
 npm run render  -- <cena.html> --audio <wav> --saida <mp4>
 npm run sons    -- <mp4> <pasta-ep> <saida.mp4>          # mixa voz + cues.js do episódio
 npm run sons:buscar -- "termo" --cc0                     # Openverse → entity/sons/
+npm run limpar  -- <pasta-do-episodio> [--apagar]        # simula a limpeza de takes e intermediários; só apaga com --apagar e o OK do dono
 npm run cortar  -- <master.mp4> --plataforma all
 npm test                                                 # depois de mexer em scripts/
 ```

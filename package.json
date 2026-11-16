@@ -12,6 +12,7 @@
     "montar": "node scripts/montar-narracao.js",
     "palavras": "node scripts/tempos-palavras.js",
     "render": "node scripts/render.js",
+    "limpar": "node scripts/limpar-episodio.js",
     "sons": "node scripts/mixar-sons.js",
     "cortar": "node scripts/cortar.js",
     "sons:buscar": "node scripts/sons-openverse.js buscar"

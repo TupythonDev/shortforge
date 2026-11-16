@@ -25,3 +25,7 @@ entity/sons/musica-cheiro-de-festa.mp3
 # Cena gerada pelo exemplo (node modelos/ep01/html/gerar.js)
 modelos/ep01/html/cena.html
 modelos/ep01/final/*.mp4
+
+# Cena gerada pelo exemplo longo (node modelos/ep-longo/html/gerar.js)
+modelos/ep-longo/html/cena.html
+modelos/ep-longo/final/*.mp4

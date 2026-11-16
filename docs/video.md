@@ -23,6 +23,16 @@ node scripts/render.js <cena.html> --audio <ep>/audio/narracao-final.wav --saida
 - O `-shortest` corta o vídeo no fim do áudio: o áudio precisa de `apad` no fim para o CTA não sumir (o script avisa quando o áudio é mais curto)
 - Requer ffmpeg/ffprobe no PATH (`INSTALACAO.md`)
 
+## Limpeza ao concluir um episódio (2026-11-16)
+
+`npm run limpar -- canais/<canal>/series/<serie>/epXX` **simula** por padrão: lista o que sairia e quanto libera, sem apagar nada. Só `--apagar` remove. Pelo `CLAUDE.md` (nada some sem confirmar), o assistente roda a simulação, mostra ao dono e só apaga depois do sim.
+
+- **Sempre na lista:** takes de voz que não foram escolhidos (ficam os de `tempos.json` e `escolhas.json`), vídeos intermediários em `final/` (`-nosom`, `-silent`, `-preview`), `final/checks/` e `chk*.jpg`, `html/cena.html` (o `gerar.js` regera), `audio/_asr.json`, `*.log`, `tmp/`
+- **Só com opção:** `--versoes-antigas` (vídeo, som e upload de versões anteriores à mais nova) · `--takes-escolhidos` (a pasta `audio/segs/` inteira: depois disso não dá para remontar a voz sem narrar de novo; `narracao.wav` e `tempos.json` ficam)
+- **Nunca:** roteiro, `publicacao.md`, `cues.js`, `gerar.js` e o resto de `html/`, `assets/`, `narracao*.wav`, `tempos.json`, `segmentos.json`, `escolhas.json`, `sfx-*`, capa, `CREDITS.txt`, o vídeo da versão mais nova e pastas que começam com `_`
+- Recusa rodar se `final/` não ficaria com nenhum vídeo (episódio sem versão pronta); `--forcar` ignora
+- Medido numa cópia do ep02 de um canal (3 versões): 152 MB liberados com `--versoes-antigas`; só o padrão, 82 MB. Rodar depois do dono aprovar e **depois** de publicar: o vídeo publicado costuma ser o `-upload`/`-som` mais novo, que fica
+
 ## Horizontal (16:9) e vídeos longos (2026-11-16)
 
 - Render horizontal testado com uma cena mínima: sai 1920×1080 a 30 fps (11,8 quadros/s com 2 Chromes numa cena trivial; cena pesada e mais Chromes mudam isso). Uma cena de 1920×1080 tem 2,6× mais pixels que a vertical, então espere render mais lento por quadro
